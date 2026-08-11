@@ -7,14 +7,20 @@ import authRoutes from "./routes/auth.routes.js";
 import customerRoutes from "./routes/customer.routes.js";
 import productRoutes from "./routes/product.routes.js";
 import inventoryRoutes from "./routes/inventory.routes.js";
-
+import cors from "cors";
 import challanRoutes from "./routes/challan.routes.js";
 
 const app = express();
 
 const PORT = Number(process.env.PORT) || 5000;
-
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:5174"],
+  }),
+);
 app.use(express.json());
+
+
 
 app.get("/api", (_req, res) => {
   res.json({
