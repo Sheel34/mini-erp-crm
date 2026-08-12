@@ -15,7 +15,11 @@ const app = express();
 const PORT = Number(process.env.PORT) || 5000;
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173", 
+      "http://localhost:5174",
+      "https://mini-erp-crm-one-zeta.vercel.app"
+    ],
   }),
 );
 app.use(express.json());
@@ -52,6 +56,6 @@ app.use("/api/products", productRoutes);
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/challans", challanRoutes);
 
-app.listen(PORT, () => {
-  console.log(`API running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`API running on port ${PORT}`);
 });
