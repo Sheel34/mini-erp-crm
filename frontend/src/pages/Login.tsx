@@ -17,8 +17,8 @@ type LoginProps = {
 };
 
 export default function Login({ onLogin }: LoginProps) {
-  const [email, setEmail] = useState("admin@mini-erp.local");
-  const [password, setPassword] = useState("Admin12345!");
+  const [email, setEmail] = useState("admin@minierp.demo");
+  const [password, setPassword] = useState("Admin@123");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
